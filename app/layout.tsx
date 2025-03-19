@@ -4,16 +4,6 @@ import "./globals.css";
 import { ReactNode } from 'react';
 import Navbar from '@/components/Navbar';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   title: "SIGHT Confidential ERC20",
   description: "Demo for CERC20 with FHE",
