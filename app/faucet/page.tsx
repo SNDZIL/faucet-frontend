@@ -28,35 +28,25 @@ export default function FaucetPage() {
   };
 
   return (
-    <div className="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 px-6 py-12">
+    <div className="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 px-6 py-8">
       {/* 左侧 Faucet 区域 */}
-      <div className="bg-white p-8 rounded-lg shadow-md">
-        <h2 className="text-3xl font-bold">Testnet Faucet</h2>
+      <div className="bg-white p-8 rounded-lg">
+        <h2 className="text-3xl font-bold">Confidential ERC20 Faucet</h2>
         <p className="mt-2 text-gray-600">
-          Send test tokens to your wallet for free. Claim once every 24 hours.
+          Send tokens to your wallet for free.
         </p>
 
-        {/* 选择 Token */}
-        <div className="mt-6 flex space-x-4">
-          <button className="w-1/2 border-2 border-blue-500 p-4 rounded-lg flex items-center justify-center text-xl font-semibold text-blue-600">
-            USDC
-          </button>
-          <button className="w-1/2 border-2 border-gray-300 p-4 rounded-lg flex items-center justify-center text-xl font-semibold text-gray-500">
-            EURC
-          </button>
-        </div>
-
-        {/* 网络选择 */}
-        <div className="mt-6">
+        {/* Select Network */}
+        {/* <div className="mt-6">
           <label className="block text-gray-700 text-sm font-semibold mb-2">
             Network
           </label>
           <select className="w-full border-gray-300 rounded-lg p-3">
             <option>Ethereum Sepolia</option>
           </select>
-        </div>
+        </div> */}
 
-        {/* 输入地址 */}
+        {/* Input Address */}
         <div className="mt-4">
           <label className="block text-gray-700 text-sm font-semibold mb-2">
             Send to
@@ -76,7 +66,7 @@ export default function FaucetPage() {
         {/* 领取按钮 */}
         <button
           onClick={handleFaucet}
-          className="mt-6 w-full bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold p-3 rounded-lg"
+          className="mt-6 w-full text-black transition-all duration-200 bg-transparent border-2 border-black hover:bg-black hover:text-white text-lg font-semibold p-3 rounded-lg"
         >
           Send Tokens
         </button>
@@ -100,7 +90,7 @@ export default function FaucetPage() {
       </div>
 
       {/* 右侧 Frequently Asked Questions */}
-      <div className="bg-white p-8 rounded-lg shadow-md">
+      <div className="bg-white p-8 rounded-lg">
         <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
 
         {/* FAQ 列表 */}

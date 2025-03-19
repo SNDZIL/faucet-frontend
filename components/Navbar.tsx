@@ -102,7 +102,7 @@ export default function Navbar() {
   return (
     <>
       {/* 主导航栏 */}
-      <nav className="grotesk mt-6 mb-16 flex items-center justify-between py-4 px-4 sm:mx-0 sm:mb-20 sm:px-0 md:px-6">
+      <nav className="grotesk mt-6 mb-10 flex items-center justify-between py-4 px-4 sm:mx-0 sm:mb-10 sm:px-0 md:px-6">
         {/* 左侧 Logo 和导航链接 */}
         <div className="flex items-center space-x-8">
           <Link href="/" className="text-3xl font-bold text-black">

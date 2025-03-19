@@ -41,9 +41,12 @@ export default function BalancePage() {
           headers: { Authorization: `Bearer ${jwtToken}` },
         }
       );
-      setBalance(`Balance: ${String(response.data)}`);
+      setBalance(`${String(response.data)}`);
     } catch (error: any) {
-      console.error("Axios error (balance):", error.response?.data || error.message);
+      console.error(
+        "Axios error (balance):",
+        error.response?.data || error.message
+      );
       setBalance("Error fetching balance.");
     }
   };
@@ -56,12 +59,18 @@ export default function BalancePage() {
         "http://localhost:3333/decrypt/fullydecrypt",
         {},
         {
-          headers: { "Content-Type": "application/json", Authorization: `Bearer ${jwtToken}` },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${jwtToken}`,
+          },
         }
       );
       setFullBalance(`Decrypted Full Balance: ${String(response.data)}`);
     } catch (error: any) {
-      console.error("Axios error (full):", error.response?.data || error.message);
+      console.error(
+        "Axios error (full):",
+        error.response?.data || error.message
+      );
       setFullBalance("Error decrypting tokens (full).");
     }
   };
@@ -74,25 +83,32 @@ export default function BalancePage() {
         "http://localhost:3333/decrypt/halfdecrypt",
         {},
         {
-          headers: { "Content-Type": "application/json", Authorization: `Bearer ${jwtToken}` },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${jwtToken}`,
+          },
         }
       );
       setHalfBalance(`Decrypted Half Balance: ${String(response.data)}`);
     } catch (error: any) {
-      console.error("Axios error (half):", error.response?.data || error.message);
+      console.error(
+        "Axios error (half):",
+        error.response?.data || error.message
+      );
       setHalfBalance("Error decrypting tokens (half).");
     }
   };
 
   return (
-    <section className="py-10 bg-gray-100 sm:py-16 lg:py-24">
+    <section className="py-10 sm:py-16 lg:py-6">
       <div className="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-24 gap-y-10">
-          
           {/* 左侧 - 余额信息 */}
           <div>
             <h2 className="text-3xl font-bold text-black">CERC20 Balance</h2>
-            <p className="mt-2 text-gray-600">Check your token balance or decrypt it.</p>
+            <p className="mt-2 text-gray-600">
+              Check your token balance or decrypt it.
+            </p>
 
             {userAddress && (
               <div className="mt-4 p-4 bg-white rounded-lg shadow-md">
@@ -104,9 +120,28 @@ export default function BalancePage() {
             )}
 
             {balance && (
-              <div className="mt-4 p-4 bg-white rounded-lg shadow-md">
+              <div className="mt-4 p-4 bg-white rounded-lg shadow-md ">
                 <p className="text-lg font-semibold text-gray-800">Balance:</p>
-                <p className="text-lg text-gray-700">{balance}</p>
+                <p className="text-sm font-mono text-gray-600">{balance}</p>
+              </div>
+            )}
+
+            {/* 显示解密结果 */}
+            {fullBalance && (
+              <div className="mt-4 p-4 bg-white rounded-lg shadow-md ">
+                <p className="text-lg font-semibold text-gray-800">
+                  Full Decrypt Result:
+                </p>
+                <p className="text-sm font-mono text-gray-600">{fullBalance}</p>
+              </div>
+            )}
+
+            {halfBalance && (
+              <div className="mt-4 p-4 bg-white rounded-lg shadow-md ">
+                <p className="text-lg font-semibold text-gray-800">
+                  Half Decrypt Result:
+                </p>
+                <p className="text-sm font-mono text-gray-600">{halfBalance}</p>
               </div>
             )}
           </div>
@@ -114,23 +149,29 @@ export default function BalancePage() {
           {/* 右侧 - 解密按钮和介绍 */}
           <div className="overflow-hidden bg-white rounded-lg shadow-md">
             <div className="p-8 lg:px-12 lg:py-10">
-              <h3 className="text-2xl font-semibold text-black">Decrypt Balance</h3>
-              
+              <h3 className="text-2xl font-semibold text-black">
+                Decrypt Balance
+              </h3>
+
               <p className="mt-4 text-lg text-gray-600">
-                <strong>Full Decrypt:</strong> When you choose full decrypt, the system will reveal your exact token balance. 
-                This option fully decrypts your encrypted data to display the precise amount of tokens you hold.
+                <strong>Full Decrypt:</strong> When you choose full decrypt, the
+                system will reveal your exact token balance. This option fully
+                decrypts your encrypted data to display the precise amount of
+                tokens you hold.
               </p>
 
               <button
                 onClick={handleCheckFullBalance}
-                className="flex items-center justify-center w-full px-4 py-4 mt-6 text-base font-semibold text-white transition-all duration-200 bg-green-600 border-2 border-transparent rounded-md hover:bg-green-700"
+                className="flex items-center justify-center w-full px-4 py-4 mt-4 text-base font-semibold text-black transition-all duration-200 bg-transparent border-2 border-black rounded-md hover:bg-black hover:text-white"
               >
                 Check Full Decrypt
               </button>
 
               <p className="mt-6 text-lg text-gray-600">
-                <strong>Half Decrypt:</strong> In contrast, the half decrypt option only shows you an approximate range of your token balance, 
-                ensuring enhanced privacy by not exposing the exact figure.
+                <strong>Half Decrypt:</strong> In contrast, the half decrypt
+                option only shows you an approximate range of your token
+                balance, ensuring enhanced privacy by not exposing the exact
+                figure.
               </p>
 
               <button
@@ -141,23 +182,6 @@ export default function BalancePage() {
               </button>
             </div>
           </div>
-        </div>
-
-        {/* 显示解密结果 */}
-        <div className="mt-10">
-          {fullBalance && (
-            <div className="p-4 bg-white rounded-lg shadow-md">
-              <p className="text-lg font-semibold text-gray-800">Full Decrypt Result:</p>
-              <p className="text-lg text-gray-700">{fullBalance}</p>
-            </div>
-          )}
-
-          {halfBalance && (
-            <div className="mt-4 p-4 bg-white rounded-lg shadow-md">
-              <p className="text-lg font-semibold text-gray-800">Half Decrypt Result:</p>
-              <p className="text-lg text-gray-700">{halfBalance}</p>
-            </div>
-          )}
         </div>
       </div>
     </section>
