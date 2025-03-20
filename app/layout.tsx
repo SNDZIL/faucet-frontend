@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-gray-50 text-gray-900">
         <Navbar />
-        <main className="container mx-auto p-4">
+        <main className="container mx-auto p-4 mt-50 md:mt-40 lg:mt-30">
           {children}
         </main>
       </body>

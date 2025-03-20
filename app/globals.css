@@ -91,3 +91,7 @@ body {
 .max-w-9xl {
   max-width: 110rem;
 }
+
+.home-intro-image {
+  @apply  h-auto w-full object-cover rounded-lg md:h-90 lg:h-130
+}

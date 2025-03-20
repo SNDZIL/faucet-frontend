@@ -10,16 +10,16 @@ export default function HomePage() {
               Experience Next-Generation Confidential Tokens
             </h1>
             <p className="mt-6 max-w-2xl text-xl font-semibold text-[#404040]">
-              SIGHT Confidential ERC20 leverages cutting-edge Fully Homomorphic
-              Encryption (FHE) and the Sight Oracle platform to secure your
-              token transactions while preserving your privacy.
+              SIGHT Confidential ERC20 leverages cutting-edge Sight Oracle with
+              Fully Homomorphic Encryption to secure your token transactions
+              while preserving your privacy.
             </p>
           </div>
           <div className="mb-10 mt-10 hidden w-full flex-col lg:mt-12 lg:inline-block lg:w-3/6">
-            <img src="/images/placeholder.png" alt="Hero" />
+            <img src="/images/homepage.jpg" alt="CERC20" />
           </div>
           <div className="my-10 inline-block w-full flex-col lg:mt-0 lg:hidden lg:w-2/5">
-            <img src="/images/placeholder.png" alt="Hero" />
+            <img src="/images/homepage.jpg" alt="CERC20" />
           </div>
         </div>
 
@@ -33,8 +33,8 @@ export default function HomePage() {
                 </h2>
               </div>
 
-              <div className="grid grid-cols-2 gap-16 text-center lg:grid-cols-6">
-                <div className="hidden items-center justify-center lg:inline-block">
+              <div className="grid grid-cols-2 gap-16">
+                {/* <div className="hidden items-center justify-center lg:inline-block">
                   <img
                     src="/images/fhe.png"
                     alt="FHE"
@@ -43,22 +43,22 @@ export default function HomePage() {
                 </div>
                 <div className="hidden items-center justify-center lg:inline-block">
                   <img
-                    src="/images/sight_oracle.png"
-                    alt="Sight Oracle"
+                    src="/images/sightlogo.svg"
+                    alt="Sight"
+                    className="block h-24 object-contain"
+                  />
+                </div> */}
+                <div className="flex items-center justify-center">
+                  <img
+                    src="/images/sightlogo.svg"
+                    alt="Sight"
                     className="block h-24 object-contain"
                   />
                 </div>
                 <div className="flex items-center justify-center">
                   <img
-                    src="/images/cerc20.png"
-                    alt="CERC20"
-                    className="block h-24 object-contain"
-                  />
-                </div>
-                <div className="flex items-center justify-center">
-                  <img
-                    src="/images/security.png"
-                    alt="Security"
+                    src="/images/CCTF.jpg"
+                    alt="CCTF"
                     className="block h-24 object-contain"
                   />
                 </div>
@@ -66,7 +66,7 @@ export default function HomePage() {
 
               <div className="mb-6 flex w-full flex-col text-center">
                 <a
-                  href="/"
+                  href="https://sightai.io/"
                   className="underline-blue mb-8 text-xl font-bold text-black"
                 >
                   Learn More
@@ -76,12 +76,13 @@ export default function HomePage() {
           </div>
 
           {/* 详细产品介绍 */}
+          {/* 详细产品介绍 */}
           <div className="text-black">
             <div className="max-w-9xl mx-auto flex flex-col items-center justify-center px-5">
               <div className="mr-0 mb-6 w-full py-4 text-center lg:w-2/3">
                 <div>
                   <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
-                    Fully Homomorphic Encryption (FHE) Technology
+                    Fully Homomorphic Encryption
                   </h2>
                   <p className="mb-4 text-lg leading-relaxed">
                     Fully Homomorphic Encryption (FHE) is a cutting-edge
@@ -92,7 +93,11 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="mt-4 w-full flex-col lg:mt-4 lg:inline-block lg:w-full">
-                  <img src="/images/placeholder.png" alt="Hero" />
+                  <img
+                    src="/images/FHE.png"
+                    alt="FHE"
+                    className="home-intro-image"
+                  />
                 </div>
               </div>
 
@@ -102,14 +107,20 @@ export default function HomePage() {
                     Sight Oracle: Decentralized Computation
                   </h2>
                   <p className="mb-4 text-lg leading-relaxed">
-                    The Sight Oracle platform, developed by SightAI, enables
-                    secure computation on encrypted data. It seamlessly
-                    integrates with various blockchain networks to provide
-                    trusted and decentralized computation services.
+                    Sight Oracle is a Computational Oracle that allows users to
+                    delegate computations on encrypted data using Fully
+                    Homomorphic Encryption (FHE). Compatible with various
+                    heterogeneous blockchain networks and supporting multiple
+                    FHE schemes like CKKS and TFHE, Sight Oracle ensures
+                    security and fairness for the decentralized web.
                   </p>
                 </div>
                 <div className="mt-4 w-full flex-col lg:mt-4 lg:inline-block lg:w-full">
-                  <img src="/images/placeholder.png" alt="Hero" />
+                  <img
+                    src="/images/Sight Oracle.png"
+                    alt="Sight Oracle"
+                    className="home-intro-image"
+                  />
                 </div>
               </div>
 
@@ -120,17 +131,19 @@ export default function HomePage() {
                   </h2>
                   <p className="mb-4 text-lg leading-relaxed">
                     The Confidential ERC20 Contract extends the standard ERC20
-                    by incorporating FHE technology and the Sight Oracle
-                    platform. Sensitive data such as token balances and
-                    transaction amounts are encrypted to ensure maximum
-                    security.
+                    by incorporating FHE and the Sight Oracle. Sensitive data
+                    such as token balances and transaction amounts are encrypted
+                    to ensure maximum security.
                   </p>
                 </div>
                 <div className="mb-10 mt-4 w-full flex-col lg:mt-4 lg:inline-block lg:w-full">
-                  <img src="/images/placeholder.png" alt="Hero" />
+                  <img
+                    src="/images/homepage.jpg"
+                    alt="ERC20"
+                    className="home-intro-image"
+                  />
                 </div>
               </div>
-
             </div>
           </div>
         </div>
