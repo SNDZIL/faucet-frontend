@@ -216,7 +216,9 @@ export default function BalancePage() {
 
             {userAddress && balance && (
               <div className="mt-4 p-4 bg-white rounded-lg shadow-md break-words">
-                <p className="text-lg font-semibold text-gray-800">Balance:</p>
+                <p className="text-lg font-semibold text-gray-800">
+                  Encrypted Balance:
+                </p>
                 <p className="text-sm font-mono text-gray-600">{balance}</p>
               </div>
             )}
@@ -225,7 +227,7 @@ export default function BalancePage() {
             {userAddress && fullBalance && (
               <div className="mt-4 p-4 bg-white rounded-lg shadow-md break-words">
                 <p className="text-lg font-semibold text-gray-800">
-                  Full Decrypt Result:
+                  Decrypted Balance:
                 </p>
                 <p className="text-sm font-mono text-gray-600">{fullBalance}</p>
               </div>
@@ -234,7 +236,7 @@ export default function BalancePage() {
             {userAddress && halfBalance && (
               <div className="mt-4 p-4 bg-white rounded-lg shadow-md break-words">
                 <p className="text-lg font-semibold text-gray-800">
-                  Half Decrypt Result:
+                  Approximate Decrypted Balance:
                 </p>
                 <p className="text-sm font-mono text-gray-600">{halfBalance}</p>
               </div>
@@ -266,7 +268,7 @@ export default function BalancePage() {
                       Processing...
                     </div>
                   ) : (
-                    "Check Full Decrypt"
+                    "Decrypt"
                   )}
                 </button>
 
@@ -292,10 +294,8 @@ export default function BalancePage() {
                   </svg>
                   {hoveredTooltip === "full" && (
                     <div className="absolute right-1/2 lg:left-full top-1/2 transform -translate-y-1/2 w-64 bg-gray-800 text-blue-50 text-sm p-3 rounded-md shadow-lg">
-                      <strong>Full Decrypt:</strong> The system will reveal your
-                      exact token balance. This option fully decrypts your
-                      encrypted data to display the precise amount of tokens you
-                      hold.
+                      <strong>Exact Decrypt:</strong> Fully decrypts your data
+                      to display your precise token balance.
                     </div>
                   )}
                 </span>
@@ -319,7 +319,7 @@ export default function BalancePage() {
                       Processing...
                     </div>
                   ) : (
-                    "Check Half Decrypt"
+                    "Approximate Decrypt"
                   )}
                 </button>
 
@@ -346,9 +346,9 @@ export default function BalancePage() {
 
                   {hoveredTooltip === "half" && (
                     <div className="absolute right-1/2 lg:left-full top-1/2 transform -translate-y-1/2 w-64 bg-gray-800 text-blue-50 text-sm p-3 rounded-md shadow-lg">
-                      <strong>Half Decrypt:</strong> This option only shows an
-                      approximate range of your token balance, ensuring enhanced
-                      privacy by not exposing the exact figure.
+                      <strong>Approximate Decrypt:</strong> Reveals only an
+                      estimated range of your token balance to protect your
+                      privacy.
                     </div>
                   )}
                 </span>

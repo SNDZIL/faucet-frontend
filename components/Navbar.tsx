@@ -113,7 +113,7 @@ export default function Navbar() {
     <>
       <Toaster />
       {/* 主导航栏 */}
-      <nav className="grotesk fixed top-0 left-0 w-full flex items-center justify-between mb-10 px-4 py-6 md:px-6 lg:py-10 border-b border-b-gray-400 bg-white z-50">
+      <nav className="grotesk fixed top-0 left-0 w-full flex items-center justify-between mb-10 px-4 py-6 md:px-6 lg:py-10 border-b border-b-gray-400 bg-white z-50 upper">
         {/* 左侧 Logo 和导航链接 */}
         <div className="flex items-center space-x-8">
           <Link href="/" className="text-xl md:text-3xl font-bold text-black">
