@@ -46,9 +46,7 @@ export default function FaucetPage() {
 
   return (
     <div className="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 px-6 lg:py-8">
-      {/* Toaster 组件，确保 Toast 提示正常显示 */}
       <Toaster />
-
       {/* 左侧 Faucet 区域 */}
       <div className="bg-white lg:p-8 rounded-lg">
         <h2 className="text-3xl font-bold">Confidential ERC20 Faucet</h2>
