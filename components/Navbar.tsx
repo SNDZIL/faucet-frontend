@@ -83,7 +83,7 @@ export default function Navbar() {
     } catch (error) {
       // console.error('The connecting process or authtication process is wrong：', error);
       setWalletAddress(null);
-      toast.error("Failed to connect wallet.");
+      toast.error(`Failed to connect wallet. ${error}`);
     }
   };
 

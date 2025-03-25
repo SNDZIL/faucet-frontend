@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useCallback, useEffect, useState } from "react";
+import axios, { AxiosError } from "axios";
 import { shortenAddress } from "@/components/Navbar";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -31,16 +31,8 @@ export default function BalancePage() {
     };
   }, []);
 
-  useEffect(() => {
-    if (userAddress && jwtToken) {
-      handleCheckBalance();
-      setFullBalance("");
-      setHalfBalance("");
-    }
-  }, [userAddress, jwtToken]);
-
   /** 获取普通余额 */
-  const handleCheckBalance = async () => {
+  const handleCheckBalance = useCallback(async () => {
     console.log("Fetching balance for address:", userAddress);
     try {
       const response = await axios.get(
@@ -50,7 +42,8 @@ export default function BalancePage() {
         }
       );
       setBalance(`${String(response.data)}`);
-    } catch (error: any) {
+    } catch (err: unknown) {
+      const error = err as AxiosError<{ message: string }>;
       console.error(
         "Axios error (balance):",
         error.response?.data || error.message
@@ -60,7 +53,15 @@ export default function BalancePage() {
       );
       toast.error(error.response?.data?.message || "Error fetching balance.");
     }
-  };
+  }, [userAddress, jwtToken]);
+  
+  useEffect(() => {
+    if (userAddress && jwtToken) {
+      handleCheckBalance();
+      setFullBalance("");
+      setHalfBalance("");
+    }
+  }, [userAddress, jwtToken, handleCheckBalance]);
 
   /** 全部解密 */
   const handleCheckFullBalance = async () => {
@@ -84,7 +85,8 @@ export default function BalancePage() {
       );
       setFullBalance(`${String(response.data)}`);
       toast.success("Full Decrypt successful!");
-    } catch (error: any) {
+    } catch (err: unknown) {
+      const error = err as AxiosError<{ message: string }>;
       console.error(
         "Axios error (full):",
         error.response?.data || error.message
@@ -120,7 +122,8 @@ export default function BalancePage() {
       );
       setHalfBalance(`${String(response.data)}`);
       toast.success("Half Decrypt successful!");
-    } catch (error: any) {
+    } catch (err: unknown) {
+      const error = err as AxiosError<{ message: string }>;
       console.error(
         "Axios error (half):",
         error.response?.data || error.message

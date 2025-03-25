@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import toast, { Toaster } from "react-hot-toast"; // 引入 Toast 组件
 
 export default function FaucetPage() {
@@ -24,14 +24,15 @@ export default function FaucetPage() {
     console.log("Mint token for address:", userAddress);
 
     try {
-      const response = await axios.post(
+      await axios.post(
         "http://localhost:3333/faucet",
         { address: userAddress },
         { headers: { "Content-Type": "application/json" } }
       );
       setResult(`Tokens were successfully sent to [${userAddress}].`);
       toast.success("Tokens sent successfully!");
-    } catch (error: any) {
+    } catch (err: unknown) {
+      const error = err as AxiosError<{ message: string }>;
       console.error("Axios error:", error.response?.data || error.message);
       setResult(`${error.response?.data?.message || "Failed to send tokens."}`);
       toast.error(error.response?.data?.message || "Failed to send tokens.");

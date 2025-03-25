@@ -1,4 +1,5 @@
-// app/page.tsx
+import Image from "next/image";
+
 export default function HomePage() {
   return (
     <div className="grotesk max-w-8xl mx-auto">
@@ -16,10 +17,21 @@ export default function HomePage() {
             </p>
           </div>
           <div className="mb-10 mt-10 hidden w-full flex-col lg:mt-12 lg:inline-block lg:w-3/6">
-            <img src="/images/homepage.jpg" alt="CERC20" />
+            <Image
+              src="/images/homepage.jpg"
+              width={2048}
+              height={1365}
+              className="w-full h-auto"
+              alt="CERC20"
+            />
           </div>
           <div className="my-10 inline-block w-full flex-col lg:mt-0 lg:hidden lg:w-2/5">
-            <img src="/images/homepage.jpg" alt="CERC20" />
+            <Image
+              src="/images/homepage.jpg"
+              alt="CERC20"
+              width={2048}
+              height={1365}
+            />
           </div>
         </div>
 
@@ -49,16 +61,20 @@ export default function HomePage() {
                   />
                 </div> */}
                 <div className="flex items-center justify-center">
-                  <img
+                  <Image
                     src="/images/sightlogo.svg"
+                    width={127}
+                    height={47}
                     alt="Sight"
                     className="block h-24 object-contain"
                   />
                 </div>
                 <div className="flex items-center justify-center">
-                  <img
+                  <Image
                     src="/images/CCTF.jpg"
                     alt="CCTF"
+                    width={160}
+                    height={160}
                     className="block h-24 object-contain"
                   />
                 </div>
@@ -93,9 +109,11 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="mt-4 w-full flex-col lg:mt-4 lg:inline-block lg:w-full">
-                  <img
+                  <Image
                     src="/images/FHE.png"
                     alt="FHE"
+                    width={2513}
+                    height={1238}
                     className="home-intro-image"
                   />
                 </div>
@@ -116,9 +134,11 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="mt-4 w-full flex-col lg:mt-4 lg:inline-block lg:w-full">
-                  <img
+                  <Image
                     src="/images/Sight Oracle.png"
                     alt="Sight Oracle"
+                    width={2235}
+                    height={933}
                     className="home-intro-image"
                   />
                 </div>
@@ -137,9 +157,11 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="mb-10 mt-4 w-full flex-col lg:mt-4 lg:inline-block lg:w-full">
-                  <img
+                  <Image
                     src="/images/homepage.jpg"
                     alt="ERC20"
+                    width={2048}
+                    height={1365}
                     className="home-intro-image"
                   />
                 </div>
@@ -173,8 +195,8 @@ export default function HomePage() {
 
         {/* 额外内容 */}
         <div className="bg-white text-black">
-          <div className="mx-auto flex flex-col items-center px-5 pt-20 lg:flex-row">
-            <div className="mb-16 flex flex-col text-left lg:mb-0 lg:w-1/2 lg:flex-grow lg:items-start">
+          <div className="mx-auto mb-16 flex flex-col items-center px-5 pt-20 lg:flex-row">
+            <div className=" flex flex-col text-left lg:mb-0 lg:w-1/2 lg:flex-grow lg:items-start">
               <h2 className="mb-4 text-4xl font-bold leading-none sm:text-5xl">
                 A Future Built on Privacy and Security
               </h2>
@@ -185,7 +207,12 @@ export default function HomePage() {
               </p>
             </div>
             <div className="lg:w-full lg:max-w-2xl">
-              <img src="/images/future.png" alt="Future" />
+              <Image
+                src="/images/future.png"
+                alt="Future"
+                width={2048}
+                height={842}
+              />
             </div>
           </div>
         </div>
